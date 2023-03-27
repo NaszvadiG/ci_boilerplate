@@ -1,6 +1,6 @@
 <?php
 error_reporting(-1);
-
+if_vendor_exists();
 /**
  * 
  * 
@@ -60,4 +60,17 @@ function get_env_file()
     return 'config/.ENV';
     
 
+}
+
+
+/**
+ * 
+ * Check if vendor folder exists for CI run,
+ * if not, composer install needed to be run
+ * 
+*/
+function if_vendor_exists(){
+    if(!file_exists('vendor')){
+        die('Please run `composer install` command in root directory to continue');
+    }
 }
