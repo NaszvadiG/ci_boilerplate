@@ -8,12 +8,11 @@
  * 
  *  */
 
-		require('config/ini.php');
-
-        define('BASE_URL', env('BASE_URL'));
-        $app_dir = env('APP_DIR');
-        define('APP_V', env('APP_V'));
-        define('ENV', env('ENV'));
+	require('config/ini.php');
+	define('BASE_URL', env('BASE_URL', 'http://localhost/'.basename(dirname(__FILE__))));
+	$app_dir = env('APP_DIR', 'app/1.0/');
+	define('APP_V', env('APP_V'));
+	define('ENV', env('ENV', 'development'));
 
 /**
  * CodeIgniter

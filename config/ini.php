@@ -5,15 +5,15 @@ error_reporting(-1);
  * 
  * 
  * */
-function env($key=''){
+function env($key='', $optional_val=null){
 
 
     $filename   =   get_env_file();
 
 
     if(!file_exists($filename)){
-        //create_env_file($filename);
-        die('Your environment file is not setup correctly, please configure environment file');
+        
+        return $optional_val;
     }
 
 
